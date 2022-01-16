@@ -1,0 +1,25 @@
+{
+  "name": "oauthwithpassportjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumanIslam/OAuthWithPassport.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SumanIslam/OAuthWithPassport.js/issues"
+  },
+  "homepage": "https://github.com/SumanIslam/OAuthWithPassport.js#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
