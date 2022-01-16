@@ -15,6 +15,8 @@ const googleAuthOptions = {
 }
 const verifyCallback = (accessToken, refreshToken, profile, cb) => {
   // passport callback function
+  console.log('passport callback function fired');
+  console.log(profile);
 };
 
 passport.use(new GoogleStrategy(googleAuthOptions, verifyCallback))

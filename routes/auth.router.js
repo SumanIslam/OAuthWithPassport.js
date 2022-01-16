@@ -16,7 +16,7 @@ authRouter.get('/google', passport.authenticate('google', {
   scope: ['profile'] 
 }));
 
-authRouter.get('/google/callback', (req, res) => {
+authRouter.get('/google/callback', passport.authenticate('google'), (req, res) => {
   res.send('You reached the callback url')
 })
 
