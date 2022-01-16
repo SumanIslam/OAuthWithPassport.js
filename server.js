@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 
 const authRouter = require('./routes/auth.router');
+const passportSetup = require('./services/passport-setup');
 
 const app = express();
 

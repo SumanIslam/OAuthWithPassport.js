@@ -7,10 +7,14 @@ const config = {
   CLIENT_SECRET: process.env.CLIENT_SECRET,
 }
 
-passport.use(new GoogleStrategy({
+const googleAuthOptions = {
   // GoogleStrategy option goes here
   clientID: config.CLIENT_ID,
   clientSecret: config.CLIENT_SECRET,
-}), () => {
+  callbackURL: '/auth/google/callback'
+}
+const verifyCallback = (accessToken, refreshToken, profile, cb) => {
   // passport callback function
-})
+};
+
+passport.use(new GoogleStrategy(googleAuthOptions, verifyCallback))
