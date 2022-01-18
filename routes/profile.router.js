@@ -13,7 +13,7 @@ function checkLoggedIn(req, res, next) {
 }
 
 profileRouter.get('/', checkLoggedIn, (req, res) => {
-  res.send(`You are logged in ${req.user.userName}`);
+  res.render('profile', {user: req.user});
 });
 
 module.exports = profileRouter;
