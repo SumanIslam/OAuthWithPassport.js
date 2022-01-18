@@ -1,4 +1,5 @@
 const express = require('express');
+const { restart } = require('nodemon');
 const passport = require('passport');
 
 const authRouter = express.Router();
@@ -17,7 +18,8 @@ authRouter.get('/google', passport.authenticate('google', {
 }));
 
 authRouter.get('/google/callback', passport.authenticate('google'), (req, res) => {
-  res.send('You reached the callback url')
+  res.send(req.user)
+  res.send('You reached the callback url');
 })
 
 module.exports = authRouter;
