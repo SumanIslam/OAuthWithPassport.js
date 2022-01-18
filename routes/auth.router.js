@@ -9,7 +9,9 @@ authRouter.get('/login', (req, res) => {
 
 authRouter.get('/logout', (req, res) => {
   // handle with passport
-  res.send('logging out')
+  // res.send('logging out')
+  req.logout();
+  res.redirect('/')
 });
 
 authRouter.get('/google', passport.authenticate('google', {

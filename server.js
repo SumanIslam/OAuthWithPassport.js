@@ -25,6 +25,7 @@ app.set('view engine', 'ejs');
 
 // cookie session
 app.use(cookieSession({
+  name: 'session',
   maxAge: 24 * 60 * 60 * 1000,
   keys: [ config.COOKIE_KEY_1 ],
 }))
