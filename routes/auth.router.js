@@ -4,12 +4,11 @@ const passport = require('passport');
 const authRouter = express.Router();
 
 authRouter.get('/login', (req, res) => {
-  res.render('login')
+  res.render('login', {user: req.user});
 });
 
 authRouter.get('/logout', (req, res) => {
   // handle with passport
-  // res.send('logging out')
   req.logout();
   res.redirect('/')
 });
