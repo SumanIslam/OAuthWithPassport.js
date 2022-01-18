@@ -2,7 +2,7 @@ const userModel = require('./user.mongo');
 
 async function saveUser(user) {
   try {
-    await userModel.findOneAndUpdate({
+    return await userModel.findOneAndUpdate({
       googleID: user.googleID,
     }, user, {
       upsert: true,
@@ -12,4 +12,15 @@ async function saveUser(user) {
   }
 };
 
-module.exports = saveUser;
+async function getUser(id) {
+  try {
+    return await userModel.findById(id);
+  } catch(err) {
+    console.log(`Couldn't get user: ${err.message}`);
+  }
+}
+
+module.exports = {
+  saveUser,
+  getUser,
+};
